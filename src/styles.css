@@ -1,0 +1,115 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  margin: 0;
+  padding: 1rem;
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #ffffffaa;
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease;
+}
+
+.form, .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.form label, .filters select {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.form input, .filters select {
+  padding: 0.5rem;
+  border: 2px solid #a5d6a7;
+  border-radius: 8px;
+  background: #e8f5e9;
+  transition: all 0.3s ease;
+}
+
+.form input:focus, .filters select:focus {
+  outline: none;
+  border-color: #66bb6a;
+  background: #c8e6c9;
+}
+
+button {
+  background: #66bb6a;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.card {
+  background: linear-gradient(to top left, #a5d6a7, #c8e6c9);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: zoomIn 0.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3 {
+  color: #1b5e20;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0.3rem 0;
+  color: #2e7d32;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}

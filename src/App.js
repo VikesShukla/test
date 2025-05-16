@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from "react";
+import IrrigationForm from "./components/IrrigationForm";
+import ScheduleChart from "./components/ScheduleChart";
+import FilterBar from "./components/FilterBar";
+import "./styles.css";
 
-function App() {
+export default function App() {
+  const [schedule, setSchedule] = useState([]);
+  const [filters, setFilters] = useState({ plot: "All", status: "All" });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1 className="title">🌾 Irrigation System Scheduler 🌿</h1>
+      <IrrigationForm setSchedule={setSchedule} />
+      <FilterBar filters={filters} setFilters={setFilters} />
+      <ScheduleChart schedule={schedule} filters={filters} />
     </div>
   );
 }
-
-export default App;
